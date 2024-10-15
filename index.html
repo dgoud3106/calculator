@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="tabs__nav-design-1">
+  <div class="tabs__tab" onclick="openTab(event, 'Tab1')">
+      <span>All</span>
+  </div>
+  <div class="tabs__tab" onclick="openTab(event, 'Tab2')">
+      <span>Makro Food Service</span>
+  </div>
+  <div class="tabs__tab" onclick="openTab(event, 'Tab3')">
+      <span>Makro</span>
+  </div>
+</div>
+<!-- Tab 1 Content -->
+<div id="Tab1" class="tabcontent">
+  <div class="cards-container">
+      <div class="card" onclick="showMap('map1')">
+          <div class="text-content">
+              <h3>Ayutthaya</h3>
+              <p>Distance 2.1Km 1468 Patthanakan Road, Khwaneg Patthanakan, Khet Suan Luang Bangkok 10250.</p>
+          </div>
+          <img src="https://lh5.googleusercontent.com/p/AF1QipPqrp4J-JjoGhSzPr9pxpMvzDpxgDkkV926Uq7j=w408-h306-k-no" alt="Image 1">
+      </div>
+      <div class="map-container">
+          <div id="map1" class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15182052.234887483!2d87.1846981549623!3d21.719971243062908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102be1c94dfab59%3A0x428c36286c7eaf3f!2sMakro%20Food%20Service%20North%20Pattaya!5e0!3m2!1sen!2sin!4v1728395194212!5m2!1sen!2sin" width="400" height="300"></iframe>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Tab 2 Content -->
+<div id="Tab2" class="tabcontent">
+  <div class="cards-container">
+      <div class="card" onclick="showMap('map2')">
+          <div class="text-content">
+              <h3>Ayutthaya 2</h3>
+              <p>Distance 2.1Km 1468 Patthanakan Road, Khwaneg Patthanakan, Khet Suan Luang Bangkok 10250.</p>
+          </div>
+          <img src="https://lh5.googleusercontent.com/p/AF1QipPqrp4J-JjoGhSzPr9pxpMvzDpxgDkkV926Uq7j=w408-h306-k-no" alt="Image 2">
+      </div>
+      <div class="map-container">
+          <div id="map2" class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.8307426912147!2d100.63342521117029!3d14.321262283795765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d8a0124d257c5%3A0x600bf93d17c0c2cd!2sMakro!5e0!3m2!1sen!2sin!4v1728395238282!5m2!1sen!2sin" width="400" height="300"></iframe>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Add more cards and maps as needed -->
+
+<script>
+  // Function to handle tab switching
+  function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+
+  // Function to show the selected map next to the card
+  function showMap(mapId) {
+      var maps = document.querySelectorAll('.map');
+      maps.forEach(function(map) {
+          map.style.display = 'none';
+      });
+      document.getElementById(mapId).style.display = 'block';
+  }
+</script>
+
+
+</body>
+</html>
